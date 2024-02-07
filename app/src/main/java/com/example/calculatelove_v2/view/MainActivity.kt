@@ -26,11 +26,4 @@ class MainActivity : AppCompatActivity() {
             navController.navigate(R.id.onBoardingFragment)
         }
     }
-
-    /*private fun checkBoolean() {
-        supportFragmentManager.beginTransaction().add(R.id.container, OnBoardingFragment())
-            .commit()
-
-    }
-     */
 }

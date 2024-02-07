@@ -7,8 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import com.example.calculatelove.R
 import com.example.calculatelove.databinding.FragmentCalculateBinding
 import com.example.calculatelove_v2.LoveViewModel
+import com.example.calculatelove_v2.di.App
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -28,16 +31,22 @@ class CalculateFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initListener()
     }
+
     @SuppressLint("SetTextI18n")
     private fun initListener() {
         with(binding) {
+            btnHistory.setOnClickListener {
+                findNavController().navigate(R.id.historyFragment)
+            }
             btnCalculate.setOnClickListener {
                 viewModel.getLove(
                     firstName = firstName.text.toString(),
                     secondName = secondName.text.toString()
                 ).observe(requireActivity()) {
                     it?.let { model ->
-                        tvResult.text = "${model.firstName} \n${model.secondName} \n${model.percentage} \n${model.result}"
+                        App.appDatabase.loveDao().insertLove(model)
+                        tvResult.text =
+                            "${model.firstName} \n${model.secondName} \n${model.percentage} \n${model.result}"
                     }
                 }
                 /*

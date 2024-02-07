@@ -16,5 +16,10 @@
         android:name="com.example.calculatelove_v2.obBoarding.OnBoardingFragment"
         android:label="fragment_on_boarding"
         tools:layout="@layout/fragment_on_boarding" />
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.example.calculatelove_v2.view.HistoryFragment"
+        android:label="fragment_history"
+        tools:layout="@layout/fragment_history" />
 
 </navigation>

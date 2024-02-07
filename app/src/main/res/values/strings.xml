@@ -13,4 +13,6 @@
     <string name="skip">skip</string>
     <string name="get_started">Get started</string>
     <string name="name">Name</string>
+    <string name="history">History</string>
+    <string name="delete">Delete</string>
 </resources>
