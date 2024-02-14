@@ -22,8 +22,8 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
-        if (!pref.isShow()) {
+//        if (!pref.isShow()) {
             navController.navigate(R.id.onBoardingFragment)
-        }
+//        }
     }
 }
